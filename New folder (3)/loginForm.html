@@ -1,0 +1,31 @@
+
+<form name="signin">
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" name="username" ng-minlength='5'  ng-maxlength='15' required  placeholder="Username" ng-model="data.username">
+          </label>
+		  <div ng-messages="signin.username.$error"  ng-show="signin.username.$error" style="color:red" role="alert">
+    <div ng-message="required"> * You did not enter a field</div>
+          </div>
+          <label class="item item-input">
+              <input name="password" type="password" ng-minlength='5'  ng-maxlength='15' required placeholder="Password" ng-model="data.password">
+          </label>
+          <div ng-messages="signin.password.$error" style="color:red" ng-show="signin.password.$error " role="alert" >
+    <div ng-message="required"> * You did not enter a field</div>
+    <div ng-message="minlength">* Your field is too short</div>
+    <div ng-message="maxlength">* Your field is too long</div>
+  </div>          
+          
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>
+</form>
+
+
+    
+
+
+

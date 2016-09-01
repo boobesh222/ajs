@@ -1,0 +1,39 @@
+<form name="personaldetails">
+<label class="item item-input ">
+    <span class="input-label">Sex </span>
+
+ </label>
+ <ion-list class="button-full">
+  <ion-radio name="sex" ng-value="'Male'"  required ng-model="personalDetails.sex">Male</ion-radio>
+  <ion-radio name="sex" ng-value="'Female'" required ng-model="personalDetails.sex">Female</ion-radio>
+</ion-list>
+  <div ng-messages="personaldetails.sex.$error"  ng-show="personaldetails.sex.$error" style="color:red" role="alert">
+    <div ng-message="required"> * You did not enter a field</div>
+  </div>
+
+  <label class="item item-input">
+    <span class="input-label">Phone number</span>
+	<input name="phonenumber" type="text" placeholder="Phone Number" required ng-pattern="/^(\+\91{1,2}[- ])\d{10}$/" ng-model="personalDetails.phone">
+  </label>
+  
+  <div ng-messages="personaldetails.phonenumber.$error" style="color:red" ng-show="personaldetails.phonenumber.$error " role="alert">
+         <div ng-message="required"> * You did not enter a field</div>
+         <div ng-message="pattern"> * invalid phone number</div>
+
+  </div>
+
+ <label class="item item-input ">
+    <span class="input-label">Address</span>
+    <textarea name="address" rows="4"  required placeholder="address" ng-model="personalDetails.address"></textarea>
+ </label>
+ <div ng-messages="personaldetails.address.$error"  ng-show="personaldetails.address.$error " style="color:red" role="alert">
+    <div ng-message="required"> * You did not enter a field</div>
+  </div>
+  
+<button class="button button-calm button-full" ui-sref-active="active" ui-sref="form.educational" ng-click="personalFormSubmit()">
+  next
+</button> 
+<button class="button button-calm button-full" ui-sref-active="active" ui-sref="form.login" >
+  back
+</button> 
+  </form>

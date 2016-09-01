@@ -1,0 +1,58 @@
+<form name="msForm" >
+<label  class="item item-input">
+  <span class="input-label">Username</span>   
+   <input name="firstname" type="text" ng-minlength='5'  ng-maxlength='15' required placeholder="First Name" ng-model="formdetails.firstname">
+  </label>
+  <div ng-messages="msForm.firstname.$error"  ng-show="msForm.firstname.$error  " style="color:red" role="alert">
+    <div ng-message="required"> * You did not enter a field</div>
+  </div>
+  
+  <label class="item item-input" >
+   <span class="input-label">Fullname</span>   
+    <input name="lastname" type="text" placeholder="Fullname" ng-minlength='5'  ng-maxlength='15' required ng-model="formdetails.lastname">
+  </label>
+  
+  <div ng-messages="msForm.lastname.$error"  ng-show="msForm.lastname.$error  " style="color:red" role="alert">
+    <div ng-message="required"> * You did not enter a field</div>
+  </div>
+  
+   <label class="item item-input">
+    <span class="input-label">Password : </span>
+       <input name="pass" type="password" ng-minlength='5'  ng-maxlength='15' required placeholder="password" ng-model="formdetails.password">
+  </label>
+  <div ng-messages="msForm.pass.$error" style="color:red" ng-show="msForm.pass.$error " role="alert" >
+    <div ng-message="required"> * You did not enter a field</div>
+    <div ng-message="minlength">* Your field is too short</div>
+    <div ng-message="maxlength">* Your field is too long</div>
+  </div>
+  
+  
+  <label class="item item-input" >
+     <span class="input-label">Email</span>   
+
+    <input name="email" type="email" required placeholder="xxx@abc.com" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" ng-model="formdetails.email">
+  </label>
+  
+  
+  <div ng-messages="msForm.email.$error" style="color:red" ng-show="msForm.email.$error " role="alert" >
+        <div ng-message="required"> * You did not enter a field</div>
+        <div ng-message="pattern"> * invalid email</div>
+  </div>
+  
+  <label class="item item-input" >
+       <span class="input-label">DOB</span>   
+    <input name="dob" type="text" required placeholder="dd/mm/yyyy" 
+           ng-pattern='/^[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$/'
+
+	ng-model="formdetails.dob">
+  </label>
+   <div ng-messages="msForm.dob.$error" style="color:red" ng-show="msForm.dob.$error  " role="alert" >
+        <div ng-message="required"> * You did not enter a field</div>
+        <div ng-message="pattern"> * invalid date</div>
+  </div>
+  
+  
+  <button class="button button-calm button-full" ui-sref-active="active" ui-sref="form.personal" ng-click="loginSubmit()">
+  next
+ </button>
+</form>

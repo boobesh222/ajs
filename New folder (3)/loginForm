@@ -1,0 +1,81 @@
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label><label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          
+          
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>
+
+
+
+<div class="bar bar-header bar-royal">
+  <h1 class="title">AllianceOne</h1>
+</div>
+<ion-content class="has-header">
+<div class="card">
+  <div class="item item-text-wrap "  >
+    Sign in 
+  </div>
+  <div class="item item-text-wrap "  >
+    Sign up
+  </div>
+
+</div>
+</ion-content>
+
+        
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form id="signup-form" ng-submit="processForm()">
+
+            <!-- our nested state views will be injected here -->
+      <ion-nav-view id="form-views"></ion-nav-view>
+            
+        </form>
+
+    </div>
+s    
+
+<ion-content class="pane">
+    <div id="form-container">
+
+        <div class="page-header text-center">
+            <h2>Registration Form </h2>
+            
+            <!-- the links to our nested states using relative paths -->
+            <!-- add the active class if the state matches our ui-sref -->
+            <div id="status-buttons" class="text-center card">
+                <a ui-sref-active="active" ui-sref=".login"><span>1</span> login</a>
+                <a  ui-sref=".personal"><span>2</span> personal</a>
+                <a ui-sref=".educational"><span>3</span> educational</a>
+            </div>
+        </div>
+        
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form id="signup-form" ng-submit="processForm()">
+
+            <!-- our nested state views will be injected here -->
+      <ion-nav-view id="form-views"></ion-nav-view>
+            
+        </form>
+
+    </div>
+</ion-content>
+
+https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic
+    
+
+
+
